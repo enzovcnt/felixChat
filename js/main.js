@@ -122,7 +122,7 @@ function displayMessages(){
         if(message.author === "Felix")
         {
             divMessage.classList.add('felix')
-
+            paragraphe.classList.add('pIA')
             profilPic.src = "https://picsum.photos/id/48/100";
 
         }else{
