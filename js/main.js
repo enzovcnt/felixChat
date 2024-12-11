@@ -63,6 +63,7 @@ function displayLoginForm(){
 }
 
 
+
 //let paramsEnzo = { //avoir le token
 //    method: "POST",
 //    headers: {
@@ -152,8 +153,7 @@ function handlePrompt(){
         displayMessages()
         content : prompt.value = "";
 
-
-
+        typingAnimation();
         askIa(prompt.value).then((data) => {
             console.log(data)
             addMessageToMessagesArray({
@@ -161,6 +161,7 @@ function handlePrompt(){
                 content:data,
             })
             displayMessages()
+
         })
 
     })
@@ -200,6 +201,17 @@ function displayChat(){
 
 }
 
+function typingAnimation(){
+    document.querySelector('.anime')
+    const divTyping = document.createElement('div')
+    divTyping.classList.add('typingAnime')
+    for (let i = 0; i < 3; i++) {
+       const anime = document.createElement('span')
+        divTyping.appendChild(anime)
+    }
+    messages.appendChild(divTyping);
+}
+console.log(typingAnimation)
 
 
 if(!token){
