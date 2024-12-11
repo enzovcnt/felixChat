@@ -206,7 +206,7 @@ function typingAnimation(){
     const divTyping = document.createElement('div')
     divTyping.classList.add('typingAnime')
     for (let i = 0; i < 3; i++) {
-       const anime = document.createElement('span')
+        const anime = document.createElement('span')
         divTyping.appendChild(anime)
     }
     messages.appendChild(divTyping);
