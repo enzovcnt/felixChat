@@ -19,16 +19,7 @@ let deuxiemeMessageIA = {
     content : "Quelle est ta question ?",
 }
 
-//let params = { //avoir le token
-//    method: "POST",
-//    headers: {
-  //      'Content-Type': 'application/json'
-    //},
-    //body: JSON.stringify({
-      //  username: "enzo",
-        //password: "jwIAKDpQjq",
-    //})
-//}
+
 
 let messages = [premierMessageIA, premierMessageUser, deuxiemeMessageIA]
 async function login(username, password){
@@ -72,6 +63,17 @@ function displayLoginForm(){
 }
 
 
+//let paramsEnzo = { //avoir le token
+//    method: "POST",
+//    headers: {
+//        'Content-Type': 'application/json'
+//    },
+//    body: JSON.stringify({
+//        username: "enzo",
+//        password: "jwIAKDpQjq",
+//    })
+//}
+
 
 //fetch('https://felix.esdlyon.dev/login', params)
   //  .then(response => response.json())
@@ -85,7 +87,7 @@ function displayLoginForm(){
 
 
 
-function answer(){
+function englishAnswer(){
     let paramsIA = { //utiliser le token
     method: "POST",
     headers: {
@@ -148,16 +150,19 @@ function handlePrompt(){
             content:prompt.value
         })
         displayMessages()
+        content : prompt.value = "";
+
 
 
         askIa(prompt.value).then((data) => {
             console.log(data)
             addMessageToMessagesArray({
                 author : "Felix",
-                content:data
+                content:data,
             })
             displayMessages()
         })
+
     })
 }
 
@@ -192,6 +197,7 @@ function displayChat(){
 
     displayMessages()
     handlePrompt()
+
 }
 
 
