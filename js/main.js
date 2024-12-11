@@ -1,17 +1,18 @@
 //identifiant : pierre : XqSn5rM35sQT
+//identifiant : enzo : jwIAKDpQjq
 
 let token = null
 
 
 
-let params = {
+let params = { //avoir le token
     method: "POST",
     headers: {
         'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-        username: "pierre",
-        password: "XqSn5rM35sQT",
+        username: "enzo",
+        password: "jwIAKDpQjq",
     })
 }
 
@@ -23,13 +24,12 @@ fetch('https://felix.esdlyon.dev/login', params)
         console.log("coucou",token)
         answer()
 
-
     });
 
 
 
 function answer(){
-    let paramsIA = {
+    let paramsIA = { //utiliser le token
     method: "POST",
     headers: {
         'Content-Type': 'application/json',

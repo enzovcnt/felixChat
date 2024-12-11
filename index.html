@@ -8,12 +8,25 @@
 </head>
 <body>
 
-<form>
-    <label for="fname">Username:</label><br>
-    <input type="text" id="fname" name="fname"><br>
-    <label for="lname">Password:</label><br>
-    <input type="text" id="lname" name="lname">
-</form>
+
+<div class="container">
+    <div class="login">
+        <label for="fname">Username:</label><br>
+        <input type="text" id="fname" name="fname" class="inputUsername"><br>
+        <label for="lname">Password:</label><br>
+        <input type="password" id="lname" name="lname" class="inputPassword">
+        <button class="loginBtn">Login</button>
+    </div>
+
+    <div class="chat">
+        <div class="messages"></div>
+        <div class="chatForm">
+            <input type="text" id="message" name="message" class="inputMessage">
+            <button class="sendBtn">Send</button>
+        </div>
+    </div>
+</div>
+
 
 
 <script src="js/main.js"></script>
