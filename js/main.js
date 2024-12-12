@@ -8,15 +8,6 @@ let animation = document.querySelector('.anime')
 
 
 
-function load(){
-    if (divMessage.classList.contains('felix')) {
-        animation.style.display = 'none'
-    }else{
-        animation.style.display = 'block'
-    }
-}
-
-
 
 let premierMessageIA = {
     author : "Felix",
@@ -158,14 +149,15 @@ function displayMessages(){
 function handlePrompt(){
     let prompt = document.querySelector('.inputMessage')
     let submitButton = document.querySelector('.sendBtn')
+    let hideMessage = "L'intégralité de ton message doit être en anglais "
 
     submitButton.addEventListener('click', ()=>{
         addMessageToMessagesArray({
             author : "User",
-            content:prompt.value
+            content: prompt.value
         })
         displayMessages()
-        content : prompt.value = "";
+        prompt.value = "";
 
 
         askIa(prompt.value)
