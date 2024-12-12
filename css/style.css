@@ -132,10 +132,9 @@ p{
 
 .anime{
     opacity: 1;
-    width: 20px;
-    height: 20px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    background-color: red;
     animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-name: anime;
