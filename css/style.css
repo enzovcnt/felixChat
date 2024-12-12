@@ -130,5 +130,19 @@ p{
     border: 4px solid #4f81bd;
 }
 
+.anime{
+    opacity: 1;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-name: anime;
+}
 
-
+@keyframes anime{
+    0% {opacity: 1;}
+    50% {opacity: 0.3;}
+    100% {opacity: 1;}
+}
