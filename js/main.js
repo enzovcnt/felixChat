@@ -4,6 +4,19 @@
 let token = null
 const loginPage = document.querySelector('.login')
 const chatPage = document.querySelector('.chat')
+let animation = document.querySelector('.anime')
+
+
+
+function load(){
+    if (divMessage.classList.contains('felix')) {
+        animation.style.display = 'none'
+    }else{
+        animation.style.display = 'block'
+    }
+}
+
+
 
 let premierMessageIA = {
     author : "Felix",
@@ -128,6 +141,7 @@ function displayMessages(){
             paragraphe.classList.add('pIA')
             profilPic.src = "https://picsum.photos/id/48/100";
 
+
         }else{
             divMessage.classList.add('user')
             paragraphe.classList.add('pUser')
@@ -153,8 +167,9 @@ function handlePrompt(){
         displayMessages()
         content : prompt.value = "";
 
-        typingAnimation();
-        askIa(prompt.value).then((data) => {
+
+        askIa(prompt.value)
+            .then((data) => {
             console.log(data)
             addMessageToMessagesArray({
                 author : "Felix",
@@ -166,6 +181,8 @@ function handlePrompt(){
 
     })
 }
+
+
 
 async function askIa(prompt)
 {
@@ -179,9 +196,11 @@ async function askIa(prompt)
             prompt: prompt,
         })
     }
+    animation.style.display = 'block';
     return await fetch('https://felix.esdlyon.dev/ollama', params)
         .then(response => response.json())
         .then((json) => {
+            animation.style.display = 'none'
             console.log(json)
             return json.message
         })
@@ -190,6 +209,7 @@ async function askIa(prompt)
 function addMessageToMessagesArray(message)
 {
     messages.push(message)
+
 }
 
 function displayChat(){
@@ -201,14 +221,8 @@ function displayChat(){
 
 }
 
-function typingAnimation(){
-    document.querySelector('.anime')
-    const divTyping = document.createElement('div')
-    divTyping.classList.add('typingAnime')
 
-    messages.appendChild(divTyping);
-}
-console.log(typingAnimation)
+
 
 
 if(!token){

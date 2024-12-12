@@ -139,6 +139,7 @@ p{
     animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-name: anime;
+    display: none;
 }
 
 @keyframes anime{
