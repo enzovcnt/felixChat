@@ -152,9 +152,11 @@ function handlePrompt(){
     let hideMessage = "L'intégralité de ton message doit être en anglais "
 
     submitButton.addEventListener('click', ()=>{
+        let smiley = prompt.value
+        .replace(/:3/g, catEmoji32)
         addMessageToMessagesArray({
             author : "User",
-            content: prompt.value
+            content: smiley
         })
         displayMessages()
         prompt.value = "";
@@ -214,13 +216,31 @@ function displayChat(){
 }
 
 
+//let titre = document.querySelector('.title')
+function removeH1(titre){
+    if (titre.matches){
+        titre.classList.remove()
+    }else{
+        titre.classList.add('title')
+    }
+}
+
+//titre = window.matchMedia("(max-width: 700px)")
+
+//removeH1()
+//titre.addEventListener('change', ()=>{
+  //  removeH1();
+//});
 
 
 
+const catEmoji32 = String.fromCodePoint(0x0001F638);
 if(!token){
     displayLoginForm()
+    console.log(catEmoji32)
 }else{
     displayChat()
     displayMessages()
 }
+
 
